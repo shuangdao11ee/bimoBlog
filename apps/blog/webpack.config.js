@@ -9,6 +9,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -22,6 +27,9 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     new HtmlWebPackPlugin({
