@@ -23,6 +23,7 @@ importers:
       html-webpack-plugin: ^5.6.0
       react: ^18.3.1
       react-dom: ^18.3.1
+      react-router-dom: ~6.23.0
       ts-loader: ^9.5.1
       typescript: ^5.4.5
       webpack: ^5.91.0
@@ -33,6 +34,7 @@ importers:
       '@infra/utils': link:../../packages/utils
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
+      react-router-dom: 6.23.0_nnrd3gsncyragczmpvfhocinkq
     devDependencies:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-runtime': 7.24.3_@babel+core@7.24.5
@@ -1482,6 +1484,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@remix-run/router/1.16.0:
+    resolution: {integrity: sha512-Quz1KOffeEf/zwkCBM3kBtH4ZoZ+pT3xIXBG4PPW/XFtDP7EGhtTiC2+gpL9GnR7+Qdet5Oa6cYSvwKYg6kN9Q==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@types/body-parser/1.19.5:
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
@@ -3511,6 +3518,29 @@ packages:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+    dev: false
+
+  /react-router-dom/6.23.0_nnrd3gsncyragczmpvfhocinkq:
+    resolution: {integrity: sha512-Q9YaSYvubwgbal2c9DJKfx6hTNoBp3iJDsl+Duva/DwxoJH+OTXkxGpql4iUK2sla/8z4RpjAm6EWx1qUDuopQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.16.0
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-router: 6.23.0_react@18.3.1
+    dev: false
+
+  /react-router/6.23.0_react@18.3.1:
+    resolution: {integrity: sha512-wPMZ8S2TuPadH0sF5irFGjkNLIcRvOSaEe7v+JER8508dyJumm6XZB1u5kztlX0RVq6AzRVndzqcUh6sFIauzA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.16.0
+      react: 18.3.1
     dev: false
 
   /react/18.3.1:
