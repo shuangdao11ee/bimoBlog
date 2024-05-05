@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "module": "es6",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "@babel/runtime/helpers"
+  ]
 }
