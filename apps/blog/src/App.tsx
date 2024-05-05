@@ -1,21 +1,10 @@
 import React from 'react';
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>Hello World</h1>
-//       </div>
-//     );
-//   }
-// }
-
-// export { App };
+import { a } from '@infra/components';
 
 export const App = () => {
   return (
     <div>
-      <h1>Hello Wor1ld1</h1>
+      <h1>Hello world! {a}</h1>
     </div>
   );
 };

@@ -308,6 +308,14 @@
     {
       "packageName": "blog",
       "projectFolder": "apps/blog"
+    },
+    {
+      "packageName": "@infra/utils",
+      "projectFolder": "packages/utils"
+    },
+    {
+      "packageName": "@infra/components",
+      "projectFolder": "packages/components"
     }
     // {
     //   /**

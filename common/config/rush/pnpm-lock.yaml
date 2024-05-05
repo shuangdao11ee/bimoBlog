@@ -13,6 +13,8 @@ importers:
       '@babel/preset-react': ^7.24.1
       '@babel/preset-typescript': ^7.24.1
       '@babel/runtime': ^7.24.5
+      '@infra/components': workspace:*
+      '@infra/utils': workspace:*
       '@types/react': ^18.3.1
       '@types/react-dom': ^18.3.0
       babel-loader: ^9.1.3
@@ -27,6 +29,8 @@ importers:
       webpack-cli: ^5.1.4
       webpack-dev-server: ^5.0.4
     dependencies:
+      '@infra/components': link:../../packages/components
+      '@infra/utils': link:../../packages/utils
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
     devDependencies:
@@ -47,6 +51,32 @@ importers:
       webpack: 5.91.0_webpack-cli@5.1.4
       webpack-cli: 5.1.4_7g7xmbfgwcshgwk3qk4jfvsjrq
       webpack-dev-server: 5.0.4_utxbaipxexw2cjau6qp6xhdxiq
+
+  ../../packages/components:
+    specifiers:
+      '@types/react': ^18.3.1
+      '@types/react-dom': ^18.3.0
+      react: ^18.3.1
+      react-dom: ^18.3.1
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+    devDependencies:
+      '@types/react': 18.3.1
+      '@types/react-dom': 18.3.0
+
+  ../../packages/utils:
+    specifiers:
+      '@types/react': ^18.3.1
+      '@types/react-dom': ^18.3.0
+      react: ^18.3.1
+      react-dom: ^18.3.1
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+    devDependencies:
+      '@types/react': 18.3.1
+      '@types/react-dom': 18.3.0
 
 packages:
 
