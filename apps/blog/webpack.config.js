@@ -47,6 +47,21 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
+      },
+      {
+        test: /\.module\.(css|less)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              esModule: false
+            }
+          },
+          // 'postcss-loader',
+          'less-loader'
+        ]
       }
     ]
   },
