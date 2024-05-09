@@ -1,8 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import { App } from './page/App';
 import { ErrorPage } from './error';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './page/Layout';
 
 const router = createBrowserRouter([
@@ -12,10 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <App />,
         children: [
           {
-            index: true,
-            element: <App />
+            path: 'artical',
+            element: <div>test</div>
           }
         ]
       }
