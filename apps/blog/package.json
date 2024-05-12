@@ -4,11 +4,9 @@
   "description": "",
   "main": "index",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode development",
-    "start": "webpack-dev-server --open --mode development",
+    "dev": "node ./script/start.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "test-start": "node ./script/start.js"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
