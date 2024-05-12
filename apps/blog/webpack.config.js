@@ -73,7 +73,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       titel: 'react app',
       filename: 'index.html',
-      template: './src/index.html'
+      template: './html/index.html'
     })
   ],
   devServer: {
