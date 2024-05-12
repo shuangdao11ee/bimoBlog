@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
+  mode: 'development',
   entry: './src/router.tsx',
   output: {
     filename: 'bundle.js',
@@ -8,11 +9,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(ts|tsx)?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
       {
         test: /\.html$/,
         use: {
@@ -49,6 +45,11 @@ module.exports = {
         }
       },
       {
+        test: /\.(ts|tsx)?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.module\.(css|less)$/,
         use: [
           'style-loader',
@@ -59,7 +60,7 @@ module.exports = {
               esModule: false
             }
           },
-          // 'postcss-loader',
+          'postcss-loader',
           'less-loader'
         ]
       }
@@ -76,6 +77,7 @@ module.exports = {
     })
   ],
   devServer: {
+    static: './dist',
     historyApiFallback: true
   }
 };

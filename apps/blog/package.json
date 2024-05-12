@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --open --mode development",
     "start": "webpack-dev-server --open --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "test-start": "node ./script/start.js"
   },
   "keywords": [],
   "author": "",
