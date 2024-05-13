@@ -13,10 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        // element: <App />, 这个是layout
         children: [
           {
             index: true,
-            element: <App />
+            element: <App /> //这个是page
           },
           {
             path: 'artical',
