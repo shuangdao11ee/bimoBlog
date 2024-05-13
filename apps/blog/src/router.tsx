@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { App } from './page/App';
+import { App } from './page/Page';
 import { ErrorPage } from './error';
 import { Layout } from './page/Layout';
 
