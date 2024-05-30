@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import './global.less';
+
 import { App } from './page/Page';
 import { ErrorPage } from './error';
 import { Layout } from './page/Layout';
@@ -13,7 +15,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        // element: <App />, 这个是layout
         children: [
           {
             index: true,

@@ -63,6 +63,22 @@ module.exports = {
           'postcss-loader',
           'less-loader'
         ]
+      },
+      {
+        // AI 写的正则匹配, 咋也不知道对不对
+        test: /^(?!.*module\.less$).*\.less$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              esModule: false
+            }
+          },
+          'postcss-loader',
+          'less-loader'
+        ]
       }
     ]
   },
