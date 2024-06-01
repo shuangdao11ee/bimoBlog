@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             element: <App /> //这个是page
           },
           {
-            path: 'artical',
+            path: 'artical/:id',
             element: <div>test</div>
           }
         ]

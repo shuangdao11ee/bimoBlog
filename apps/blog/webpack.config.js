@@ -5,7 +5,9 @@ module.exports = {
   entry: './src/router.tsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    // 下面这个是必须要加的
+    publicPath: '/'
   },
   module: {
     rules: [
