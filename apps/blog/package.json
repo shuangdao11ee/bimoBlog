@@ -4,7 +4,7 @@
   "description": "",
   "main": "index",
   "scripts": {
-    "dev": "node ./script/start.js",
+    "dev": "nodemon --watch ./webpack.config.js --exec \"node ./script/start.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
@@ -35,7 +35,8 @@
     "style-loader": "~4.0.0",
     "typescript-plugin-css-modules": "~5.1.0",
     "postcss-loader": "~8.1.1",
-    "postcss": "~8.4.38"
+    "postcss": "~8.4.38",
+    "nodemon": "~3.1.2"
   },
   "dependencies": {
     "react": "^18.3.1",
