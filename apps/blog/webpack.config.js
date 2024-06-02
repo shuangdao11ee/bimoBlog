@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         // AI 写的正则匹配, 咋也不知道对不对
-        test: /^(?!.*module\.less$).*\.less$/,
+        test: /^(?!.*module\.less$).*\.(less|css)$/,
         use: [
           'style-loader',
           {
