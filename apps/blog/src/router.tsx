@@ -7,6 +7,7 @@ import './global.less';
 import { App } from './page/Page';
 import { ErrorPage } from './error';
 import { Layout } from './page/Layout';
+import { Artical } from './page/artical';
 import { ArticalDetail } from './page/artical/[id]';
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <App /> //这个是page
+          },
+          {
+            path: 'artical',
+            element: <Artical />
           },
           {
             path: 'artical/:id',
