@@ -5,15 +5,14 @@ const MyPlugin = require('./plugin/myPlugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 var config = {
-  mode: 'development',
-  entry: {
-    main: {
-      import: './src/router.tsx'
-    }
-  },
+  mode: isDevelopment ? 'development' : 'production',
+  entry: ['./src/router.tsx'],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -61,7 +60,10 @@ var config = {
               '@babel/preset-react'
             ],
             // 使用transform-runtime，避免全局污染，注入helper
-            plugins: ['@babel/plugin-transform-runtime']
+            plugins: [
+              '@babel/plugin-transform-runtime',
+              isDevelopment && require('react-refresh/babel')
+            ].filter(Boolean)
           }
         }
       },
@@ -73,9 +75,8 @@ var config = {
       {
         test: /\.module\.(css|less)$/,
         use: [
-          // path.resolve('./loader/style-loader.js'),
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
+          // 开发模式使用style-loader主要是为了hmr
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -92,8 +93,8 @@ var config = {
         // AI 写的正则匹配, 咋也不知道对不对
         test: /^(?!.*module\.less$).*\.(less|css)$/,
         use: [
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
+          // 开发模式使用style-loader主要是为了hmr
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -127,19 +128,26 @@ var config = {
       }
     }),
     new CleanWebpackPlugin(),
-    // new webpack.ProgressPlugin(),
     new HtmlWebPackPlugin({
       titel: 'react app',
       filename: 'index.html',
       template: './html/index.html'
-    })
+    }),
+    // react HMR 插件
+    isDevelopment &&
+      new ReactRefreshWebpackPlugin({
+        overlay: false
+      })
+    // new webpack.ProgressPlugin(),
     // new BundleAnalyzerPlugin()
-  ],
+  ].filter(Boolean),
   devServer: {
     host: '0.0.0.0',
     port: 8080,
     static: './dist',
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true, // HMR
+    liveReload: false
   },
   // 这一行是干什么的?
   // devtool: false

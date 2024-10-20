@@ -4,9 +4,9 @@
   "description": "",
   "main": "index",
   "scripts": {
-    "dev": "nodemon --watch ./webpack.config.js --exec \"node ./script/start.js\"",
+    "dev": "nodemon --watch ./webpack.config.js --exec \"NODE_ENV=development node ./script/start.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "",
@@ -48,7 +48,9 @@
     "eslint": "~9.12.0",
     "@eslint/js": "~9.12.0",
     "@typescript-eslint/parser": "~8.10.0",
-    "@typescript-eslint/eslint-plugin": "~8.10.0"
+    "@typescript-eslint/eslint-plugin": "~8.10.0",
+    "react-refresh": "~0.14.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "~0.5.15"
   },
   "dependencies": {
     "react": "^18.3.1",
