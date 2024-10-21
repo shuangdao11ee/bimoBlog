@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon --watch ./webpack.config.js --exec \"NODE_ENV=development node ./script/start.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "start": "NODE_ENV=production node ./script/server.js"
   },
   "keywords": [],
   "author": "",
@@ -50,7 +51,8 @@
     "@typescript-eslint/parser": "~8.10.0",
     "@typescript-eslint/eslint-plugin": "~8.10.0",
     "react-refresh": "~0.14.2",
-    "@pmmmwh/react-refresh-webpack-plugin": "~0.5.15"
+    "@pmmmwh/react-refresh-webpack-plugin": "~0.5.15",
+    "express": "~4.21.1"
   },
   "dependencies": {
     "react": "^18.3.1",
