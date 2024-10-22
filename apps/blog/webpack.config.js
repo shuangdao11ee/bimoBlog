@@ -143,7 +143,7 @@ var config = {
   ].filter(Boolean),
   devServer: {
     host: '0.0.0.0',
-    port: 8080,
+    port: 8090,
     static: './dist',
     historyApiFallback: true,
     hot: true, // HMR
