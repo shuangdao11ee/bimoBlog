@@ -23,6 +23,7 @@ export const App = (props) => {
       {testTxt}
       {b}
       {a}
+      {'测试测试测试测试'}
       <input value={value} onChange={(valueIn) => setValue(valueIn.target.value)} />
       {new Array(length).fill(0).map((item) => {
         return <div>{item + 1}</div>;
