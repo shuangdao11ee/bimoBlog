@@ -115,18 +115,20 @@ var config = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.less', '.txt']
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      attributes: {
-        id: 'target',
-        'data-target': 'example'
-      }
-    }),
+    !isDevelopment &&
+      new MiniCssExtractPlugin({
+        attributes: {
+          id: 'target',
+          'data-target': 'example'
+        }
+      }),
     new MyPlugin({ options: true }),
-    new webpack.BannerPlugin({
-      banner: (yourVariable) => {
-        return `yourVariable: ${yourVariable}`;
-      }
-    }),
+    isDevelopment &&
+      new webpack.BannerPlugin({
+        banner: (yourVariable) => {
+          return `yourVariable: ${yourVariable}`;
+        }
+      }),
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       titel: 'react app',
@@ -178,7 +180,9 @@ var config = {
       }
     },
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [new CssMinimizerPlugin(), '...'], // 通过...访问默认值 默认值中带有压缩和混淆的插件
+    // usedExports: true, // 标记未使用的导出内容,
+    innerGraph: true // 排除带有PURE注释的函数调用
   }
 };
 

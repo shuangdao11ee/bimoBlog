@@ -63,5 +63,6 @@
     "classnames": "~2.5.1",
     "@bytemd/react": "~1.21.0",
     "bytemd": "~1.21.0"
-  }
+  },
+  "sideEffects": false
 }
