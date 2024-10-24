@@ -7,7 +7,8 @@
     "dev": "nodemon --watch ./webpack.config.js --exec \"NODE_ENV=development node ./script/start.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=production node ./script/server.js"
+    "start": "NODE_ENV=production node ./script/server.js",
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -63,6 +64,5 @@
     "classnames": "~2.5.1",
     "@bytemd/react": "~1.21.0",
     "bytemd": "~1.21.0"
-  },
-  "sideEffects": false
+  }
 }

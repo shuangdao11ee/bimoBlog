@@ -152,7 +152,7 @@ var config = {
     liveReload: false
   },
   // 这一行是干什么的?
-  // devtool: false
+  devtool: 'source-map',
   performance: {
     // 暂时隐藏提示, 后面还要split chunk
     hints: false
