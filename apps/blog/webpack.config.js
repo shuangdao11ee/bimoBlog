@@ -139,8 +139,8 @@ var config = {
     isDevelopment &&
       new ReactRefreshWebpackPlugin({
         overlay: false
-      })
-    // new webpack.ProgressPlugin(),
+      }),
+    !isDevelopment && new webpack.ProgressPlugin()
     // new BundleAnalyzerPlugin()
   ].filter(Boolean),
   devServer: {
