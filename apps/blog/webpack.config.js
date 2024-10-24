@@ -14,7 +14,7 @@ var config = {
   mode: isDevelopment ? 'development' : 'production',
   entry: ['./src/router.tsx'],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     // 下面这个是必须要加的
     publicPath: '/'
