@@ -14,7 +14,7 @@ var config = {
   mode: isDevelopment ? 'development' : 'production',
   entry: ['./src/router.tsx'],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     // 下面这个是必须要加的
     publicPath: '/'
@@ -115,18 +115,20 @@ var config = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.less', '.txt']
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      attributes: {
-        id: 'target',
-        'data-target': 'example'
-      }
-    }),
+    !isDevelopment &&
+      new MiniCssExtractPlugin({
+        attributes: {
+          id: 'target',
+          'data-target': 'example'
+        }
+      }),
     new MyPlugin({ options: true }),
-    new webpack.BannerPlugin({
-      banner: (yourVariable) => {
-        return `yourVariable: ${yourVariable}`;
-      }
-    }),
+    isDevelopment &&
+      new webpack.BannerPlugin({
+        banner: (yourVariable) => {
+          return `yourVariable: ${yourVariable}`;
+        }
+      }),
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       titel: 'react app',
@@ -138,8 +140,8 @@ var config = {
     isDevelopment &&
       new ReactRefreshWebpackPlugin({
         overlay: false
-      })
-    // new webpack.ProgressPlugin(),
+      }),
+    !isDevelopment && new webpack.ProgressPlugin()
     // new BundleAnalyzerPlugin()
   ].filter(Boolean),
   devServer: {
@@ -151,7 +153,7 @@ var config = {
     liveReload: false
   },
   // 这一行是干什么的?
-  // devtool: false
+  devtool: 'hidden-source-map',
   performance: {
     // 暂时隐藏提示, 后面还要split chunk
     hints: false
@@ -179,7 +181,9 @@ var config = {
       }
     },
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [new CssMinimizerPlugin(), '...'], // 通过...访问默认值 默认值中带有压缩和混淆的插件
+    // usedExports: true, // 标记未使用的导出内容,
+    innerGraph: true // 排除带有PURE注释的函数调用
   }
 };
 

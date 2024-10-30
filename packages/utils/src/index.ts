@@ -1,2 +1,7 @@
 const b = 1;
-export { b };
+
+const getCcc = () => 3;
+
+const ccc = /*#__PURE__*/ getCcc();
+
+export { b, ccc };

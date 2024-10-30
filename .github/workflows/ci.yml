@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
       - name: Git config user
@@ -24,4 +24,4 @@ jobs:
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
       - name: Rush rebuild
-        run: node common/scripts/install-run-rush.js rebuild --verbose --production
+        run: node common/scripts/install-run-rush.js rebuild --verbose
