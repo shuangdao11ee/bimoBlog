@@ -131,7 +131,8 @@ var config = {
     new HtmlWebPackPlugin({
       titel: 'react app',
       filename: 'index.html',
-      template: './html/index.html'
+      template: './html/index.html',
+      favicon: path.resolve('favicon/image.png')
     }),
     // react HMR 插件
     isDevelopment &&
@@ -143,7 +144,7 @@ var config = {
   ].filter(Boolean),
   devServer: {
     host: '0.0.0.0',
-    port: 8080,
+    port: 8090,
     static: './dist',
     historyApiFallback: true,
     hot: true, // HMR

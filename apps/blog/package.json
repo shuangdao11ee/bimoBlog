@@ -59,6 +59,7 @@
     "react-dom": "^18.3.1",
     "@infra/utils": "workspace:*",
     "@infra/components": "workspace:*",
+    "@infra/sentry": "workspace:*",
     "react-router-dom": "~6.23.0",
     "classnames": "~2.5.1",
     "@bytemd/react": "~1.21.0",

@@ -316,6 +316,10 @@
     {
       "packageName": "@infra/components",
       "projectFolder": "packages/components"
+    },
+    {
+      "packageName": "@infra/sentry",
+      "projectFolder": "packages/sentry"
     }
     // {
     //   /**

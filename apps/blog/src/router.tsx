@@ -10,6 +10,11 @@ import { Layout } from './page/Layout';
 import { Artical } from './page/artical';
 import { ArticalDetail } from './page/artical/[id]';
 
+import { SentryInit } from '@infra/sentry';
+
+// sentry 监控
+SentryInit();
+
 const router = createBrowserRouter([
   {
     errorElement: <ErrorPage />,
