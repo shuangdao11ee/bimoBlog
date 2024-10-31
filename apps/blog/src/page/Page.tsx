@@ -24,7 +24,13 @@ export const App = (props) => {
       {b}
       {a}
       {'测试测试测试231111'}
-      <input value={value} onChange={(valueIn) => setValue(valueIn.target.value)} />
+      <input
+        value={value}
+        onChange={(valueIn) => setValue(valueIn.target.value)}
+        onClick={() => {
+          throw new Error('This is your first error!');
+        }}
+      />
       {new Array(length).fill(0).map((item) => {
         return <div>{item + 1}</div>;
       })}
