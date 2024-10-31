@@ -1,3 +1,5 @@
+const { sentryWebpackPlugin } = require('@sentry/webpack-plugin');
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -115,6 +117,12 @@ var config = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.less', '.txt']
   },
   plugins: [
+    sentryWebpackPlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: 'bimo-sentry',
+      project: 'javascript-react',
+      url: 'http://localhost:9000/'
+    }),
     !isDevelopment &&
       new MiniCssExtractPlugin({
         attributes: {
