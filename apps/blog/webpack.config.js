@@ -121,8 +121,9 @@ var config = {
       sentryWebpackPlugin({
         org: 'js-monitor',
         project: 'javascript-react',
-        authToken: process.env.SENTRY_AUTH_TOKEN
-      }),
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        debug: true
+      }), // 这个插件有一个问题, 就是在webpack compiled 完成之后, 会阻塞webpack很长的一段时间, 有可能是网络问题导致, 有待研究
     !isDevelopment &&
       new MiniCssExtractPlugin({
         attributes: {
@@ -130,7 +131,7 @@ var config = {
           'data-target': 'example'
         }
       }),
-    new MyPlugin({ options: true }),
+    // new MyPlugin({ options: true }),
     isDevelopment &&
       new webpack.BannerPlugin({
         banner: (yourVariable) => {
