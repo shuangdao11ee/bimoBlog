@@ -10,7 +10,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
+// const isDevelopment = process.env.NODE_ENV !== 'production';
+const isDevelopment = false;
 
 var config = {
   mode: isDevelopment ? 'development' : 'production',
@@ -110,6 +111,7 @@ var config = {
       }
     ]
   },
+  stats: 'minimal', // 只显示基本的构建信息，包括构建进度
   // resolveLoader: {
   //   modules: [path.resolve(__dirname, 'loader')]
   // },
@@ -123,7 +125,7 @@ var config = {
         project: 'javascript-react',
         authToken: process.env.SENTRY_AUTH_TOKEN,
         debug: true
-      }), // 这个插件有一个问题, 就是在webpack compiled 完成之后, 会阻塞webpack很长的一段时间, 有可能是网络问题导致, 有待研究
+      }), // 这个插件有一个问题, 就是在webpack compiled 完成之后, 会阻塞webpack很长的一段时间, 有可能是网络问题导致, 有待研究 后续: 确认是网络问题导致, 会向一个奇怪的ip地址发送请求然后超时两次才不会继续请求
     !isDevelopment &&
       new MiniCssExtractPlugin({
         attributes: {

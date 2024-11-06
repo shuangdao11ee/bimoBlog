@@ -320,6 +320,10 @@
     {
       "packageName": "@infra/sentry",
       "projectFolder": "packages/sentry"
+    },
+    {
+      "packageName": "my-vite",
+      "projectFolder": "apps/my-vite"
     }
     // {
     //   /**
