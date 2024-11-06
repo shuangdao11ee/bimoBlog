@@ -56,7 +56,8 @@
     "express": "~4.21.1",
     "@sentry/webpack-plugin": "~2.22.6",
     "vite": "~5.4.10",
-    "@vitejs/plugin-react-swc": "~3.7.1"
+    "@vitejs/plugin-react-swc": "~3.7.1",
+    "@sentry/vite-plugin": "~2.22.6"
   },
   "dependencies": {
     "react": "^18.3.1",

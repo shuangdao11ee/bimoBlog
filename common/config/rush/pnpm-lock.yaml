@@ -21,6 +21,7 @@ importers:
       '@infra/sentry': workspace:*
       '@infra/utils': workspace:*
       '@pmmmwh/react-refresh-webpack-plugin': ~0.5.15
+      '@sentry/vite-plugin': ~2.22.6
       '@sentry/webpack-plugin': ~2.22.6
       '@types/react': ^18.3.1
       '@types/react-dom': ^18.3.0
@@ -80,6 +81,7 @@ importers:
       '@babel/types': 7.25.8
       '@eslint/js': 9.12.0
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.15_opwzw3p63u6a3e2pritqlmrely
+      '@sentry/vite-plugin': 2.22.6
       '@sentry/webpack-plugin': 2.22.6_webpack@5.91.0
       '@types/react': 18.3.1
       '@types/react-dom': 18.3.0
@@ -2383,6 +2385,17 @@ packages:
     dependencies:
       '@sentry/types': 8.35.0
     dev: false
+
+  /@sentry/vite-plugin/2.22.6:
+    resolution: {integrity: sha512-zIieP1VLWQb3wUjFJlwOAoaaJygJhXeUoGd0e/Ha2RLb2eW2S+4gjf6y6NqyY71tZ74LYVZKg/4prB6FAZSMXQ==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@sentry/bundler-plugin-core': 2.22.6
+      unplugin: 1.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
 
   /@sentry/webpack-plugin/2.22.6_webpack@5.91.0:
     resolution: {integrity: sha512-BiLhAzQYAz/9kCXKj2LeUKWf/9GBVn2dD0DeYK89s+sjDEaxjbcLBBiLlLrzT7eC9QVj2tUZRKOi6puCfc8ysw==}
@@ -8082,7 +8095,7 @@ packages:
   /unplugin/1.0.1:
     resolution: {integrity: sha512-aqrHaVBWW1JVKBHmGo33T5TxeL0qWzfvjWokObHA9bYmN7eNDkwOxmLjhioHl9878qDFMAaT51XNroRyuz7WxA==}
     dependencies:
-      acorn: 8.13.0
+      acorn: 8.14.0
       chokidar: 3.6.0
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.5.0
